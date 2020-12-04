@@ -24,9 +24,7 @@ namespace AddressBookApp
 		}
 		public void print()
 		{
-
-			Console.WriteLine(firstName + " \t  " + lastName +" \t  " + address + " \t  " + state + " \t   " +
-								contact + " \t " + zip); ;
+		Console.WriteLine(firstName + " \t  " + lastName +" \t  " + address + " \t  " + state + " \t   " +contact + " \t " + zip); ;
 		}
 	}
 }
