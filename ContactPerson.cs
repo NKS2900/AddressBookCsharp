@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AddressBookApp
 {
-	public class UserInfo
+	public class ContactPerson
 	{		
 		public String firstName;
 		public String lastName;
@@ -13,7 +13,7 @@ namespace AddressBookApp
 		public String state;
 		public String zip;
 
-		public UserInfo(String firstName, String lastName, String address,  String state, String contact, String zip)
+		public ContactPerson(String firstName, String lastName, String address,  String state, String contact, String zip)
 		{
 			this.firstName = firstName;
 			this.lastName = lastName;
