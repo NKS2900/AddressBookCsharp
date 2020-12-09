@@ -5,7 +5,7 @@ using System.Text;
 namespace AddressBookApp
 {
 	public class ContactPerson
-	{		
+	{
 		public String firstName;
 		public String lastName;
 		public String address;
