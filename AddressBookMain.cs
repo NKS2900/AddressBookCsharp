@@ -11,7 +11,7 @@ namespace AddressBookApp
 			while (flag)
 			{
 				Console.WriteLine("******WELCOME TO ADDRESS BOOK******");
-				Console.WriteLine("1. Add_Contact \n2. Display_Contact \n3. Update_Contact \n4. Exit");
+				Console.WriteLine("1. Add_Contact \n2. Display_Contact \n3. Delet_Contact \n4. Update_Contact \n5. Exit");
 				Console.WriteLine("Enter Your Choice:");
 				int input = Convert.ToInt32(Console.ReadLine());
 				switch (input)
@@ -22,13 +22,18 @@ namespace AddressBookApp
 						break;
 					case 2:
 						Display();
-						break;					
+						break;
 					case 3:
+						Console.Write("Enter FirstName U want to Delet : ");
+						string deletName = Console.ReadLine();
+						DeletContact(deletName);
+						break;
+					case 4:
 						Console.WriteLine("Enter FirstName U want To Update");
 						string fname = Console.ReadLine();
 						EditContact(fname);
-						break;					
-					case 4:
+						break;
+					case 5:
 						flag = false;
 						break;
 					default:
@@ -41,7 +46,7 @@ namespace AddressBookApp
 		{
 			Console.Write("Enter FirstName: ");
 			string firstName = Console.ReadLine();
-			bool check=CheckContact(firstName);
+			bool check = CheckContact(firstName);
 			if (check)
 			{
 				Console.Write("Enter FirstName: ");
@@ -50,14 +55,14 @@ namespace AddressBookApp
 			Console.Write("Enter LastName: ");
 			string lastName = Console.ReadLine();
 			Console.Write("Enter Address : ");
-			string address = Console.ReadLine();			
+			string address = Console.ReadLine();
 			Console.Write("Enter State : ");
 			string state = Console.ReadLine();
 			Console.Write("Enter Contact No: ");
 			string contact = Console.ReadLine();
 			Console.Write("Enter zip : ");
 			string zip = Console.ReadLine();
-			ContactPerson user = new ContactPerson(firstName, lastName, address,  state, contact, zip);
+			ContactPerson user = new ContactPerson(firstName, lastName, address, state, contact, zip);
 			userList.AddLast(user);
 			user.print();
 		}
@@ -69,7 +74,7 @@ namespace AddressBookApp
 			foreach (var item in userList)
 			{
 				ContactPerson p = item;
-				p.print();				
+				p.print();
 			}
 		}
 		public static void EditContact(string fname)
@@ -86,9 +91,9 @@ namespace AddressBookApp
 					Console.WriteLine("Contact Updated Successfully...");
 					break;
 				}
-				else if(size==check)
+				else if (size == check)
 				{
-					Console.WriteLine(fname+" not found in addressbook...");
+					Console.WriteLine(fname + " not found in addressbook...");
 					break;
 				}
 			}
@@ -124,7 +129,7 @@ namespace AddressBookApp
 					check = true;
 					Console.WriteLine($"Contact {fname} alerady presented pls Enter diff. First_Name");
 					break;
-				}				
+				}
 			}
 			return check;
 		}
