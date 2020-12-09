@@ -18,7 +18,7 @@ namespace AddressBookApp
 				{
 					case 1:
 						addUser();
-						Console.WriteLine("Details Added Successfully. \n");
+						Console.WriteLine("Details Added Successfully.\n");
 						break;
 					case 2:
 						Display();
@@ -27,7 +27,7 @@ namespace AddressBookApp
 						flag = false;
 						break;
 					default:
-						Console.WriteLine("Invalid option ???");
+						Console.WriteLine("Invalid option...");
 						break;
 				}
 			}
