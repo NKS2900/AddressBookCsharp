@@ -4,15 +4,15 @@ namespace AddressBookApp
 {
 	class AddressBookMain
 	{
-
+		public static Dictionary<string, MultipleAddressBook> addressBookDict = new Dictionary<string, MultipleAddressBook>();
 		public static void Main(string[] args)
-		{
+		{		
 			
-			Dictionary<string, MultipleAddressBook> addressBookDict = new Dictionary<string, MultipleAddressBook>();
 			bool flag = true;
 
 			while (flag)
 			{
+				Console.WriteLine();
 				Console.WriteLine("******WELCOME TO ADDRESS BOOK******");
 				Console.WriteLine("1. Create_AddressBooks \n2. Open_AddressBooks \n3. DeletAddressBook \n4. Exit");
 				int choice = Convert.ToInt32(Console.ReadLine());
@@ -22,6 +22,12 @@ namespace AddressBookApp
 					case 1:						
 						Console.Write("Enter AddressBook Name : ");
 						string book = Console.ReadLine();
+						bool check = DuplicatAddress(book);
+						if (check)
+						{
+							Console.Write("Enter AddressBook Name again : ");
+							book = Console.ReadLine();
+						}
 						MultipleAddressBook admain = new MultipleAddressBook();
 						addressBookDict.Add(book, admain);
 						Console.Clear();
@@ -85,6 +91,22 @@ namespace AddressBookApp
 						break;
 				}
 			}
+		}
+		public static bool DuplicatAddress(string bookName)
+		{
+			bool check = false;
+			foreach (var address in addressBookDict)
+			{
+				
+				if (addressBookDict.ContainsKey(bookName))
+				{
+					check = true;
+					Console.Clear();
+					Console.WriteLine($"AddressBook-> {bookName} <-alerady presented pls Enter Diff. Name");
+					break;
+				}
+			}
+			return check;
 		}
 	}
 }

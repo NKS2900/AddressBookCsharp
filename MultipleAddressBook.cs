@@ -16,7 +16,7 @@ namespace AddressBookApp
 			bool flag = true;
 			while (flag)
 			{
-				Console.WriteLine("******WELCOME TO ADDRESS BOOK******");
+				Console.WriteLine("\n******WELCOME TO ADDRESS BOOK******");
 				Console.WriteLine("1. Add_Contact \n2. Display_Contact \n3. Delet_Contact \n4. Update_Contact \n5. Exit");
 				Console.WriteLine("Enter Your Choice:");
 				int input = Convert.ToInt32(Console.ReadLine());
@@ -84,6 +84,7 @@ namespace AddressBookApp
 				ContactPerson p = item;
 				p.print();
 			}
+			Console.WriteLine("------------------------------------------------------------");
 		}
 		public static void EditContact(string fname)
 		{
@@ -127,6 +128,7 @@ namespace AddressBookApp
 				}
 			}
 		}
+		
 		public static bool CheckContact(string fname)
 		{
 			bool check = false;
