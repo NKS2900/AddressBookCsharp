@@ -6,10 +6,8 @@ namespace AddressBookApp
 	{
 		public static Dictionary<string, MultipleAddressBook> addressBookDict = new Dictionary<string, MultipleAddressBook>();
 		public static void Main(string[] args)
-		{		
-			
+		{
 			bool flag = true;
-
 			while (flag)
 			{
 				Console.WriteLine();
@@ -19,7 +17,7 @@ namespace AddressBookApp
 				int size = addressBookDict.Count;
 				switch (choice)
 				{
-					case 1:						
+					case 1:
 						Console.Write("Enter AddressBook Name : ");
 						string book = Console.ReadLine();
 						bool check = DuplicatAddress(book);
@@ -35,8 +33,8 @@ namespace AddressBookApp
 						break;
 					case 2:
 						Console.WriteLine($"you have {size} AddressBook.");
-						
-						foreach (var address in addressBookDict)
+
+						foreach (var address in addressBookDict.Keys)
 						{
 							Console.WriteLine(address);
 						}
@@ -49,7 +47,7 @@ namespace AddressBookApp
 							if (addressBookDict.ContainsKey(bookname))
 							{
 								Console.Clear();
-								Console.WriteLine("Opened Address_Book :-->"+bookname);
+								Console.WriteLine("Opened Address_Book :-->" + bookname);
 								MultipleAddressBook.MainMenu();
 							}
 							else if (size == ch)
@@ -61,13 +59,13 @@ namespace AddressBookApp
 						}
 						break;
 					case 3:
-						foreach (var address in addressBookDict)
+						foreach (var address in addressBookDict.Keys)
 						{
 							Console.WriteLine(address);
 						}
 						Console.Write("Enter Address_BookName  : ");
 						string name = Console.ReadLine();
-						
+
 						int signal = 0;
 						Console.Clear();
 						foreach (var address in addressBookDict)
@@ -79,7 +77,7 @@ namespace AddressBookApp
 								Console.WriteLine($"Address_Book {name} Deleted...");
 								break;
 							}
-							else if(size==signal)
+							else if (size == signal)
 							{
 								Console.Clear();
 								Console.WriteLine("AddressBook not present!!!!!");
@@ -97,7 +95,6 @@ namespace AddressBookApp
 			bool check = false;
 			foreach (var address in addressBookDict)
 			{
-				
 				if (addressBookDict.ContainsKey(bookName))
 				{
 					check = true;
