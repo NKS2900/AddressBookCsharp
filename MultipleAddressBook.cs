@@ -17,7 +17,7 @@ namespace AddressBookApp
 			while (flag)
 			{
 				Console.WriteLine("\n******WELCOME TO ADDRESS BOOK******");
-				Console.WriteLine("1. Add_Contact \n2. Display_Contact \n3. Delet_Contact \n4. Update_Contact \n5. Serch_Contact \n6. Exit");
+				Console.WriteLine("1. Add_Contact \n2. Display_Contact \n3. Delet_Contact \n4. Update_Contact \n5. Exit");
 				Console.WriteLine("Enter Your Choice:");
 				int input = Convert.ToInt32(Console.ReadLine());
 				switch (input)
@@ -40,13 +40,8 @@ namespace AddressBookApp
 						Console.Write("Enter FirstName U want To Update : ");
 						string fname = Console.ReadLine();
 						EditContact(fname);
-						break;
-					case 5:
-						Console.Write("Enter City name U want To Serch : ");
-						string city = Console.ReadLine();
-						SerchContact(city);
-						break;
-					case 6:
+						break;					
+					case 5:					
 						flag = false;
 						break;
 					default:
@@ -134,25 +129,7 @@ namespace AddressBookApp
 				}
 			}
 		}
-		public static void SerchContact(string city)
-		{
-			int size = userList.Count;
-			int check = 0;
-			foreach (ContactPerson user in userList)
-			{
-				check++;
-				if (user.address.Equals(city))
-				{
-					user.print();
-					check--;
-				}
-				else if (size == check)
-				{
-					Console.WriteLine(city + " not found in addressbook...");
-					break;
-				}
-			}
-		}
+		
 		public static bool CheckContact(string fname)
 		{
 			bool check = false;

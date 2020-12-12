@@ -36,7 +36,7 @@ namespace AddressBookApp
 					case 2:
 						Console.WriteLine($"you have {size} AddressBook.");
 
-						foreach (var address in addressBookDict)
+						foreach (var address in addressBookDict.Keys)
 						{
 							Console.WriteLine(address);
 						}
@@ -61,7 +61,7 @@ namespace AddressBookApp
 						}
 						break;
 					case 3:
-						foreach (var address in addressBookDict)
+						foreach (var address in addressBookDict.Keys)
 						{
 							Console.WriteLine(address);
 						}
@@ -97,7 +97,6 @@ namespace AddressBookApp
 			bool check = false;
 			foreach (var address in addressBookDict)
 			{
-
 				if (addressBookDict.ContainsKey(bookName))
 				{
 					check = true;
