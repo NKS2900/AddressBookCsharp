@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -37,11 +37,11 @@ namespace AddressBookApp
 						DeletContact(deletName);
 						break;
 					case 4:
-						Console.WriteLine("Enter FirstName U want To Update");
+						Console.Write("Enter FirstName U want To Update : ");
 						string fname = Console.ReadLine();
 						EditContact(fname);
-						break;
-					case 5:
+						break;					
+					case 5:					
 						flag = false;
 						break;
 					default:
@@ -111,6 +111,7 @@ namespace AddressBookApp
 		{
 			int size = userList.Count;
 			int check = 0;
+			Console.Clear();
 			foreach (ContactPerson user in userList)
 			{
 				check++;
@@ -145,4 +146,5 @@ namespace AddressBookApp
 		}
 	}
 }
+
 
